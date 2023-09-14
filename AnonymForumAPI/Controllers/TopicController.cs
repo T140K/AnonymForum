@@ -22,6 +22,7 @@ namespace AnonymForumAPI.Controllers
             var topics = await _context.Topics
                 .Select(t => new
                 {
+                    t.Id,
                     t.Name
                 })
                 .ToListAsync();

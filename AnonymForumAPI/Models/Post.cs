@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace AnonymForumAPI.Models
 {
@@ -15,7 +16,7 @@ namespace AnonymForumAPI.Models
         public string Title { get; set; } = null!;
         public string Contents { get; set; } = null!;
         public DateTime TimePosted { get; set; }
-
+        [JsonIgnore]
         public virtual Topic FktopicNavigation { get; set; } = null!;
         public virtual ICollection<Reply> Replies { get; set; }
     }
